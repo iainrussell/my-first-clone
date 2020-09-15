@@ -1,1 +1,11 @@
 name: build
+
+on:
+    push:
+      branch:
+        - master
+        - develop
+    pull_request:
+      branches:
+        - master
+        - develop
