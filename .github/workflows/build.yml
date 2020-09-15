@@ -34,6 +34,14 @@ jobs:
       - name: Setenv Windows
         if: ${{ matrix.os == 'windows-latest' }}
         run: echo "::set-env name=PYTHONPATH::%GITHUB_WORKSPACE%"
+      - name: Display GITHUB_WORKSPACE
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: echo %GITHUB_WORKSPACE%
+        shell: cmd
+      - name: Display PYTHONPATH
+        if: ${{ matrix.os == 'windows-latest' }}
+        run: echo %PYTHONPATH%
+        shell: cmd  
       - name: Test with pytest
         run: |
           pytest
