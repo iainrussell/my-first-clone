@@ -33,7 +33,7 @@ jobs:
         run: echo "::set-env name=PYTHONPATH::$GITHUB_WORKSPACE:$PYTHONPATH"
       - name: Setenv Windows
         if: ${{ matrix.os == 'windows-latest' }}
-        run: echo "::set-env name=PYTHONPATH::%GITHUB_WORKSPACE%"
+        run: echo "::set-env name=PYTHONPATH::$GITHUB_WORKSPACE"
       - name: Display GITHUB_WORKSPACE
         if: ${{ matrix.os == 'windows-latest' }}
         run: echo %GITHUB_WORKSPACE%
